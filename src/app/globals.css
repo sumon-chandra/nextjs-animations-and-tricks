@@ -18,16 +18,44 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
+  background: linear-gradient(to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
 
+/* Hover text animation */
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+
+  /* To the right */
+  .hoverText:hover+.hoverText {
+    font-weight: 700;
+    color: #cbd5e1;
   }
+
+  .hoverText:hover+.hoverText+.hoverText {
+    font-weight: 500;
+    color: #e2e8f0;
+  }
+
+  .hoverText:hover+.hoverText+.hoverText+.hoverText {
+    font-weight: 300;
+    color: #f1f5f9;
+  }
+
+  /* To the left */
+  .hoverText:has(+.hoverText:hover) {
+    font-weight: 700;
+    color: #cbd5e1;
+  }
+
+  .hoverText:has(+.hoverText +.hoverText:hover) {
+    font-weight: 500;
+    color: #e2e8f0;
+  }
+
+  .hoverText:has(+.hoverText +.hoverText +.hoverText:hover) {
+    font-weight: 300;
+    color: #f1f5f9;
+  }
+
 }
