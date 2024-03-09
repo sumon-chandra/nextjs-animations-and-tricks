@@ -7,7 +7,7 @@ const HoverTextAnimation = () => {
                "Hello World".split("").map((child, idx) => (
                   <span
                      key={idx}
-                     className="hoverText text-slate-400 hover:font-black hover:text-slate-100 transition-all duration-300:"
+                     className="hoverText text-slate-400 hover:font-black hover:text-slate-100 transition-all duration-300"
                   >
                      {child}
                   </span>
